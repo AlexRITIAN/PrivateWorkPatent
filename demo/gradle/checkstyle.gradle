@@ -1,0 +1,14 @@
+apply plugin: 'checkstyle'
+
+checkstyle {
+  toolVersion = "8.23"
+  configFile = rootProject.file('etc/checkstyle.xml')
+}
+
+checkstyleTest {
+  exclude '**/jmodel/**'
+}
+
+checkstyleMain {
+  exclude '**/jmodel/**'
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FindBugsFilter>
+  <Match>
+    <Package name="~.*\.jmodel(\..*)?"/>
+    <Bug pattern="EQ_DOESNT_OVERRIDE_EQUALS"/>
+  </Match>
+  <Match>
+    <Class name="~.*\.jmodel\.Keys"/>
+  </Match>
+</FindBugsFilter>

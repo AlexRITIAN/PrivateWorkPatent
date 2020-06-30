@@ -1,0 +1,57 @@
+{
+	"conditions": [
+		{
+			"column": "operational_status",
+			"option": 1,
+			"value": "Operational"
+		}
+	],
+	"querySort": {
+		"column": "ip_address",
+		"option": 1
+	},
+	"showColumns": [
+		{
+			"column": "ip_address",
+			"label": "IP Address",
+			"show": 1
+		},
+		{
+			"column": "app_name",
+			"label": "Application Name",
+			"show": 1
+		},
+		{
+			"column": "landscape",
+			"label": "Landscape",
+			"show": 1
+		},
+		{
+			"column": "name",
+			"label": "Host Name",
+			"show": 1
+		},
+		{
+			"column": "os_version",
+			"label": "OS Version",
+			"show": 1
+		},
+		{
+			"column": "City",
+			"label": "City",
+			"show": 1
+		},
+		{
+			"column": "className",
+			"label": "Operating System",
+			"show": 1
+		}
+	],
+	"className": "All",
+	"pageFlag": false,
+	"page": {
+		"currentPage": 1,
+		"pageSize": 1,
+		"totalItems": 0
+	}
+}

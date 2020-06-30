@@ -1,0 +1,45 @@
+import java.time.Instant
+
+ext {
+  bannerResourceDir = "${buildDir}/generated/resources/banner"
+}
+
+task generateBannerFile() {
+  group = "Build"
+  description = "Generate banner.txt file."
+  doFirst {
+    def dest = new File(bannerResourceDir, 'banner.txt')
+    dest.parentFile.mkdirs()
+    dest.write("\n"
+        + "=========== \${spring.application.name:${project.name}} ver. ${version} ===========\n"
+        + "== Revision: " + getGitHeadCommitId() + "\n"
+        + "== Build At: " + Instant.ofEpochSecond(System.currentTimeSeconds()) + "\n"
+        + "== Profiles: \${spring.profiles.active}\n"
+        + "=============================================================\n",
+        "UTF-8", false
+    )
+  }
+}
+
+compileJava.dependsOn(generateBannerFile)
+sourceSets.main.resources.srcDir "${bannerResourceDir}"
+
+def getGitHeadCommitId() {
+  def unknown = "UNKNOWN"
+  def gitRoot = new File(rootDir, '.git')
+  def headFile = new File(gitRoot, 'HEAD')
+  if (!headFile.exists()) {
+    return unknown
+  }
+  try {
+    def headText = headFile.getText('UTF-8').trim()
+    if (!headText.startsWith("ref: ")) {
+      return headText
+    }
+    return new File(gitRoot, headText.substring(5).trim())
+        .getText('UTF-8').trim()
+  } catch (Exception e) {
+    e.printStackTrace()
+    return unknown
+  }
+}

@@ -1,0 +1,66 @@
+server:
+  port: 8080
+
+spring:
+  jooq:
+    sql-dialect: mysql
+  application:
+    name: ${APPLICATION_NAME:dome}--${SERVICE_NAME:dome}
+  profiles:
+    active: lmp-sy-dev
+  flyway:
+    out-of-order: true
+  # config server
+  # cloud:
+  #   config:
+  #     fail-fast: true
+  #     profile: ${spring.profiles.active}
+  #     label: master
+  #     discovery:
+  #       enabled: true
+  #       service-id: lmp-config-server
+  #     headers:
+  #       SERVICE-AUTHENTICATION: ${lmp.service.token}
+  # eureka:
+  #   instance:
+  #     instance-id: ${spring.application.name}:${random.int}
+  #     prefer-ip-address: true
+
+
+#logging.pattern:
+#  console: '%d{HH:mm:ss} [%thread] %highlight(%-5level) %boldMagenta(%logger{10}) - %cyan(%msg%n)'
+#
+#logging.level:
+#  root: info
+
+swagger:
+  base-package: com.yuhao.demo.controller
+  exclude-path: /error,/actuator/**
+  title: ${spring.application.name}
+  ui-config:
+    json-editor: true
+  authorization:
+    keyName: Authorization
+
+  globalOperationParameters:
+    - name: Authorization
+      description: cmpToken
+      parameterType: header
+      modelRef: string
+      required: false
+
+
+server.tomcat:
+  max-connections: 2000
+  max-threads: 1000
+  min-spare-threads: 50
+  accept-count: 800
+
+server.tomcat.accesslog:
+  enabled: true
+  directory: access-logs
+  pattern: ACCESS %t status[%s] client_ip[%a] cost[%D] method[%m] uri_pattern[%{org.springframework.web.servlet.HandlerMapping.bestMatchingPattern}r] uri[%U] query[%q] send_bytes[%B] uid[%{_XFRAME_AUTH_UID}r] org_id[%{_XFRAME_AUTH_ORG_ID}r]
+
+#feign.okhttp.enabled: true
+
+# cmp.product-key: 51F3ADB859D14EBBBFA3FC38DFCC4964

@@ -1,0 +1,21 @@
+apply plugin: 'com.lenovo.xframe.codegen-jooq'
+
+dependencies {
+  codegenRuntime 'org.slf4j:slf4j-simple'
+}
+
+task copyCodegenDatabase(type: Copy) {
+  from "${rootDir}/etc/codegen-data"
+  into "${buildDir}/tmp/codegen"
+}
+codegenPrepareDatabase.dependsOn(copyCodegenDatabase)
+
+codegen {
+  schema = 'demo'
+  targetPackage = 'com.yuhao.demo.jmodel'
+  generate {
+    springAnnotations = true
+  }
+  forcedTypes {
+  }
+}

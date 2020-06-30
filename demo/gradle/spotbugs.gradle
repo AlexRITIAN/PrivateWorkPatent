@@ -1,0 +1,32 @@
+apply plugin: 'com.github.spotbugs'
+
+dependencies {
+  spotbugsPlugins 'com.lenovo.xframe:xframe-spotbugs:1.0.0-SNAPSHOT'
+}
+
+spotbugs {
+  toolVersion = '3.1.12'
+}
+
+afterEvaluate {
+  def spotbugsCodegen = tasks.findByPath("spotbugsCodegen")
+  if (spotbugsCodegen != null) {
+    spotbugsCodegen.enabled = false
+  }
+}
+
+spotbugsMain {
+  excludeFilter = file("${rootDir}/etc/findbugs/common-excludes.xml")
+  reports {
+    html.enabled = true
+    xml.enabled = false
+  }
+}
+
+spotbugsTest {
+  excludeFilter = file("${rootDir}/etc/findbugs/common-excludes-test.xml")
+  reports {
+    html.enabled = true
+    xml.enabled = false
+  }
+}

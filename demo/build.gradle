@@ -1,0 +1,172 @@
+import org.yaml.snakeyaml.Yaml
+buildscript {
+  repositories {
+    maven {
+      url "https://maven.aliyun.com/repository/gradle-plugin"
+    }
+  }
+  dependencies {
+    classpath "nu.studer:gradle-jooq-plugin:4.2"
+	classpath group: 'org.yaml', name: 'snakeyaml'
+	classpath('mysql:mysql-connector-java:5.1.39')
+  }
+}
+plugins {
+	id 'org.springframework.boot' version '2.3.1.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+	id 'java'
+	id "io.freefair.lombok" version "5.1.0"
+}
+
+group = 'com.yuhao'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+	mavenCentral()
+}
+
+apply from: "${rootDir}/gradle/standard-java8.gradle"
+apply from: "${rootDir}/gradle/generate-banner.gradle"
+apply plugin: 'java'
+apply plugin: 'nu.studer.jooq'
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-jooq'
+	implementation 'org.springframework.boot:spring-boot-starter-quartz'
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	compileOnly 'org.projectlombok:lombok'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	runtimeOnly 'mysql:mysql-connector-java'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+	jooqRuntime 'mysql:mysql-connector-java'
+    // compile 'com.alibaba:fastjson:1.2.70'
+    compile 'org.apache.commons:commons-lang3'
+    compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.12'
+    compile group: 'com.jcraft', name: 'jsch', version: '0.1.55'
+    compile('com.spring4all:swagger-spring-boot-starter:1.9.0.RELEASE')
+    compile group: 'org.fusesource', name: 'sigar', version: '1.6.4'
+    compile group: 'com.mchange', name: 'c3p0', version: '0.9.2.1'
+    compile group: 'commons-io', name: 'commons-io', version: '2.6'
+    // compile group: 'org.quartz-scheduler', name: 'quartz', version: '2.3.2'
+    // compile group: 'org.quartz-scheduler', name: 'quartz-jobs', version: '2.3.2'
+//     compile group: 'com.alibaba', name: 'druid', version: '1.1.23'
+//     compile group: 'net.sf.json-lib', name: 'json-lib', version: '2.4'
+// compile group: 'commons-beanutils', name: 'commons-beanutils', version: '1.9.4'
+// compile group: 'commons-collections', name: 'commons-collections', version: '3.2.2'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.11.1'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.11.1'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.11.1'
+}
+
+test {
+	useJUnitPlatform()
+}
+
+ext {
+    dataSourceConfig = readDataSourceInfoFromYmlFile()
+}
+//特殊路径配置
+sourceSets {
+    main {
+//        resources { srcDirs += profilePath }
+        java { srcDirs += "generated-sources/jooq/" }
+    }
+}
+
+//flyway {
+//    url = profileProp.getProperty("spring.datasource.url")
+//    user = profileProp.getProperty("spring.datasource.username")
+//    password = profileProp.getProperty("spring.datasource.password")
+//}
+
+//JOOQ 代码生成配置，调用方式：gradle generateXframeJooqSchemaSource
+jooq {
+    xframe(sourceSets.main) {
+        jdbc {
+            driver = 'com.mysql.jdbc.Driver'
+            url = dataSourceConfig.url
+            user = dataSourceConfig.user
+            password = dataSourceConfig.password
+            schema = dataSourceConfig.schema
+        }
+        generator {
+//            name = 'org.jooq.util.DefaultGenerator'
+//      strategy {
+//        name = 'org.jooq.util.DefaultGeneratorStrategy'
+//      }
+            database {
+//        name = 'org.jooq.util.postgres.PostgresDatabase'
+                inputSchema = dataSourceConfig.schema
+            }
+            generate {
+                relations = true
+                deprecated = false
+                records = true
+                pojos = true
+                daos = true
+                immutablePojos = false
+                fluentSetters = true
+                springAnnotations = true
+            }
+            target {
+                //生成Jave代码配置
+                packageName = 'com.yuhao.demo.jmodel'
+                directory = "generated-sources/jooq"
+            }
+        }
+    }
+}
+
+
+//从yml配置文件里读取数据库信息
+def readDataSourceInfoFromYmlFile() {
+    def yaml = new Yaml()
+    //读取默认配置文件，获取spring.profiles.active
+    def defaultFile = new File(projectDir.toString() + "/src/main/resources/application.yml")
+    Map<String, Map<String, Map>> defaultProfileYml = yaml.load(defaultFile.newInputStream())
+    def profile = defaultProfileYml.getOrDefault("spring.profiles.active", "lmp-sy-dev")
+    //获取变量spring.profiles.active，优先级第一
+    def active = project.hasProperty("spring.profiles.active") ? project.property("spring.profiles.active") : "lmp-sy-dev";
+    if (active != null && "" != active.trim()) {
+        profile = active
+    }
+    println "Using profile: " + profile
+    //加载环境配置文件
+    def envfile = new File(projectDir.toString() + "/src/main/resources/application-" + profile + ".yml")
+    yaml = new Yaml();
+    Map<String, Map<String, Map>> profileYml = yaml.load(envfile.newInputStream())
+    println profileYml
+    def dbUrl = profileYml.get("spring").get("datasource").get("url")
+    def username = profileYml.get("spring").get("datasource").get("username")
+    def password = profileYml.get("spring").get("datasource").get("password")
+//  def schema = profileYml.get("spring").get("datasource").get("database")
+    def schema = "ark_dev"
+    println "Using db url: " + dbUrl
+    return [url: dbUrl, user: username, password: password, schema: schema]
+}
+//checkstyle {
+//    toolVersion = "7.1"
+//    configFile = file('checkstyle.xml')
+//    ignoreFailures = false
+//}
+//
+//checkstyleMain {
+//    source = "src/main/java"
+//    reports {
+//        html {
+//            destination "build/checkstyle.html"
+//        }
+//    }
+//}

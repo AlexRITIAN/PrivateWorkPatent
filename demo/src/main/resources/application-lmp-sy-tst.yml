@@ -1,0 +1,15 @@
+spring.cloud.bus:
+  destination: lmpConfigServerTst
+
+spring.rabbitmq:
+  addresses: 10.122.12.186:5671,10.122.12.187:5671
+  virtual-host: lmp
+  username: lmp
+  password: lmp!@34
+  ssl:
+    enabled: true
+    verify-hostname: false
+    key-store: classpath:/ssl/tst/rabbit-client-tst.keycert.p12
+    key-store-password: 1cdNgAAXqy7gpIT9
+    trust-store: classpath:/ssl/tst/rabbit-client-tst.truststore
+    trust-store-password: 1cdNgAAXqy7gpIT9

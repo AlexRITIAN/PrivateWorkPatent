@@ -1,0 +1,62 @@
+#logging.pattern:
+#  console: '%d{HH:mm:ss} [%thread] %highlight(%-5level) %boldMagenta(%logger{10}) - %cyan(%msg%n)'
+
+#logging.level:
+#  root: info
+#  com.lenovo: info
+#  org.jooq.tools.LoggerListener: debug
+#  org.jooq.Constants: warn
+
+#spring.cloud.bus.enabled: false
+
+#spring.cloud.config:
+#  fail-fast: false
+#  enabled: false
+#  discovery:
+#    enabled: false
+
+server.tomcat:
+  min-spare-threads: 1
+  basedir: build/tomcat-basedir
+
+cmp.clients:
+  governance-api.url: localhost:8087
+
+spring:
+  datasource:
+    url: jdbc:mysql://10.122.65.79:3306/ark_dev
+    password: spM@~sW6
+    username: a_appconnect
+    driver-class-name: com.mysql.jdbc.Driver
+  # quartz:
+  # job-store-type: jdbc
+  # jdbc:
+  #   schema: ark_dev
+  #   initialize-schema: never
+  #   properties:
+  #     org:
+  #       quartz:
+  #         scheduler:
+  #           instanceName: QuartzScheduler-inner 
+  #           instanceId: AUTO                            
+  #         threadPool:
+  #           class: org.quartz.simpl.SimpleThreadPool    
+  #           threadCount: 50                             
+  #           threadPriority: 5                           
+  #         jobStore:
+  #           misfireThreshold: 60000
+  #           class: org.quartz.impl.jdbcjobstore.JobStoreTX
+  #           driverDelegateClass: org.quartz.impl.jdbcjobstore.StdJDBCDelegate
+  #           useProperties: false
+  #           dataSource: myDS
+  #           tablePrefix: QRTZ_
+  #           isClustered: true
+  #           clusterCheckinInterval: 20000
+  #         dataSource:
+  #           myDS:
+  #             driver: com.mysql.jdbc.Driver
+  #             URL: jdbc:mysql://10.122.65.79:3306/ark_dev
+  #             user: a_appconnect
+  #             password: spM@~sW6
+  #             maxConnections: 100
+  #             validationQuery: select0fromdual

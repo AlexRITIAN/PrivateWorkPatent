@@ -1,0 +1,108 @@
+22:17:21.311 logback [restartedMain] INFO  com.yuhao.demo.DemoApplication - Starting DemoApplication on YUHAO5-PC1J069E with PID 59612 (D:\githubPro\PrivateWorkPatent\demo\build\classes\java\main started by yuhao5 in D:\githubPro\PrivateWorkPatent\demo)
+22:17:21.318 logback [restartedMain] INFO  com.yuhao.demo.DemoApplication - The following profiles are active: lmp-sy-dev
+22:17:21.445 logback [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in D:\gradleUserHome\caches\modules-2\files-2.1\com.mchange\c3p0\0.9.2.1\11b29ccb286d34eb804b7f6a3786809c9bd2e1b7\c3p0-0.9.2.1.jar referenced one or more files that do not exist: file:/D:/gradleUserHome/caches/modules-2/files-2.1/com.mchange/c3p0/0.9.2.1/11b29ccb286d34eb804b7f6a3786809c9bd2e1b7/mchange-commons-java-0.2.3.4.jar
+22:17:21.446 logback [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+22:17:21.447 logback [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+22:17:25.656 logback [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+22:17:25.712 logback [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+22:17:25.714 logback [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+22:17:25.715 logback [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.36]
+22:17:25.968 logback [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+22:17:25.969 logback [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4522 ms
+22:17:27.578 logback [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+22:17:28.070 logback [restartedMain] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+22:17:29.620 logback [restartedMain] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+22:17:29.723 logback [restartedMain] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+22:17:29.725 logback [restartedMain] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.3.2 created.
+22:17:29.728 logback [restartedMain] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+22:17:29.732 logback [restartedMain] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+22:17:29.732 logback [restartedMain] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+22:17:29.732 logback [restartedMain] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.3.2
+22:17:29.733 logback [restartedMain] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@72471eb3
+22:17:30.148 logback [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+22:17:30.308 logback [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+22:17:30.365 logback [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+22:17:30.369 logback [restartedMain] INFO  o.s.s.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now
+22:17:30.370 logback [restartedMain] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+22:17:30.410 logback [restartedMain] INFO  com.yuhao.demo.DemoApplication - Started DemoApplication in 10.373 seconds (JVM running for 11.802)
+22:22:36.131 logback [restartedMain] INFO  com.yuhao.demo.DemoApplication - Starting DemoApplication on YUHAO5-PC1J069E with PID 45180 (D:\githubPro\PrivateWorkPatent\demo\build\classes\java\main started by yuhao5 in D:\githubPro\PrivateWorkPatent\demo)
+22:22:36.136 logback [restartedMain] INFO  com.yuhao.demo.DemoApplication - The following profiles are active: lmp-sy-dev
+22:22:36.244 logback [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in D:\gradleUserHome\caches\modules-2\files-2.1\com.mchange\c3p0\0.9.2.1\11b29ccb286d34eb804b7f6a3786809c9bd2e1b7\c3p0-0.9.2.1.jar referenced one or more files that do not exist: file:/D:/gradleUserHome/caches/modules-2/files-2.1/com.mchange/c3p0/0.9.2.1/11b29ccb286d34eb804b7f6a3786809c9bd2e1b7/mchange-commons-java-0.2.3.4.jar
+22:22:36.245 logback [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+22:22:36.245 logback [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+22:22:39.970 logback [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+22:22:39.986 logback [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+22:22:39.987 logback [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+22:22:39.987 logback [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.36]
+22:22:40.173 logback [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+22:22:40.173 logback [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3928 ms
+22:22:41.674 logback [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+22:22:41.926 logback [restartedMain] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+22:22:42.571 logback [restartedMain] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+22:22:42.591 logback [restartedMain] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+22:22:42.591 logback [restartedMain] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.3.2 created.
+22:22:42.592 logback [restartedMain] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+22:22:42.593 logback [restartedMain] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+22:22:42.593 logback [restartedMain] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+22:22:42.593 logback [restartedMain] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.3.2
+22:22:42.593 logback [restartedMain] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@5dfba209
+22:22:42.764 logback [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+22:22:42.855 logback [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+22:22:42.904 logback [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+22:22:42.908 logback [restartedMain] INFO  o.s.s.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now
+22:22:42.909 logback [restartedMain] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+22:22:42.927 logback [restartedMain] INFO  com.yuhao.demo.DemoApplication - Started DemoApplication in 7.912 seconds (JVM running for 8.984)
+22:22:56.763 logback [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+22:22:56.763 logback [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+22:22:56.774 logback [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 11 ms
+22:30:16.345 logback [restartedMain] INFO  com.yuhao.demo.DemoApplication - Starting DemoApplication on YUHAO5-PC1J069E with PID 51060 (D:\githubPro\PrivateWorkPatent\demo\build\classes\java\main started by yuhao5 in D:\githubPro\PrivateWorkPatent\demo)
+22:30:16.349 logback [restartedMain] INFO  com.yuhao.demo.DemoApplication - The following profiles are active: lmp-sy-dev
+22:30:16.431 logback [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls - The Class-Path manifest attribute in D:\gradleUserHome\caches\modules-2\files-2.1\com.mchange\c3p0\0.9.2.1\11b29ccb286d34eb804b7f6a3786809c9bd2e1b7\c3p0-0.9.2.1.jar referenced one or more files that do not exist: file:/D:/gradleUserHome/caches/modules-2/files-2.1/com.mchange/c3p0/0.9.2.1/11b29ccb286d34eb804b7f6a3786809c9bd2e1b7/mchange-commons-java-0.2.3.4.jar
+22:30:16.432 logback [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+22:30:16.432 logback [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+22:30:19.190 logback [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+22:30:19.205 logback [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+22:30:19.206 logback [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+22:30:19.206 logback [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.36]
+22:30:19.357 logback [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+22:30:19.358 logback [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2925 ms
+22:30:20.517 logback [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+22:30:20.697 logback [restartedMain] INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page template: index
+22:30:21.244 logback [restartedMain] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+22:30:21.267 logback [restartedMain] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+22:30:21.268 logback [restartedMain] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.3.2 created.
+22:30:21.270 logback [restartedMain] INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+22:30:21.272 logback [restartedMain] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+22:30:21.273 logback [restartedMain] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+22:30:21.273 logback [restartedMain] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.3.2
+22:30:21.273 logback [restartedMain] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@70aa6ae3
+22:30:21.408 logback [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+22:30:21.489 logback [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+22:30:21.527 logback [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+22:30:21.530 logback [restartedMain] INFO  o.s.s.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now
+22:30:21.531 logback [restartedMain] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+22:30:21.543 logback [restartedMain] INFO  com.yuhao.demo.DemoApplication - Started DemoApplication in 6.092 seconds (JVM running for 7.259)
+22:30:27.910 logback [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+22:30:27.910 logback [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+22:30:27.917 logback [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 7 ms

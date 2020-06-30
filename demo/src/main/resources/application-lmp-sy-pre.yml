@@ -1,0 +1,15 @@
+#spring.cloud.bus:
+#  destination: lmpConfigServerPre
+#
+#spring.rabbitmq:
+#  addresses: 10.122.12.172:5671,10.122.12.173:5671
+#  virtual-host: lmp
+#  username:
+#  password:
+#  ssl:
+#    enabled: true
+#    verify-hostname: false
+#    key-store: classpath:/ssl/prd/rabbit-client-prd.keycert.p12
+#    key-store-password:
+#    trust-store: classpath:/ssl/prd/rabbit-client-prd.truststore
+#    trust-store-password:
